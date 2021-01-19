@@ -67,6 +67,7 @@
  *      CborEncoder encoder;
  *      cbor_encoder_init(&encoder, buf, sizeof(buf), 0);
  *      cbor_encode_int(&encoder, some_value);
+ *      int len = cbor_encoder_get_buffer_size(&encoder, buf);
  * \endcode
  *
  * As explained before, usually the outermost CborEncoder object is used to add
@@ -81,6 +82,7 @@
  *      cbor_encode_text_stringz(&mapEncoder, "foo");
  *      cbor_encode_boolean(&mapEncoder, some_value);
  *      cbor_encoder_close_container(&encoder, &mapEncoder);
+ *      int len = cbor_encoder_get_buffer_size(&encoder, buf);
  * \endcode
  *
  * <h3 class="groupheader">Error checking and buffer size</h3>

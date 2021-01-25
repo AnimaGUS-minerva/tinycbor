@@ -81,4 +81,5 @@ script:
         (cd tests && make TESTARGS=-silent check -k
         TESTRUNNER=`which valgrind 2>/dev/null`)
   - make -s clean
-  - ./scripts/update-docs.sh
+  - ./scripts/update-docs.sh || exit 0
+
